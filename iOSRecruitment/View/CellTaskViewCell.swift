@@ -13,4 +13,6 @@ class CellTaskViewCell: UITableViewCell {
     @IBOutlet weak var titleTaskLabel: UILabel!
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var deleteTaskButton: UIButton!
+    
+
 }
