@@ -21,7 +21,19 @@
 		9484C7D325B4657C00169E8A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484C7D225B4657C00169E8A /* CoreDataStack.swift */; };
 		9484C7D625B465E600169E8A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484C7D525B465E600169E8A /* CoreDataManager.swift */; };
 		9484C7DA25B4AF6400169E8A /* alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484C7D925B4AF6400169E8A /* alert+Extension.swift */; };
+		9484C7FA25B581F000169E8A /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484C7F925B581F000169E8A /* MockCoreDataManager.swift */; };
+		9484C8DA25B64D6700169E8A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484C8D925B64D6700169E8A /* MockCoreDataStack.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9484C7E525B5808400169E8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09D0056A2293F1BB00477097 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09D005712293F1BB00477097;
+			remoteInfo = iOSRecruitment;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09D005722293F1BB00477097 /* iOSRecruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSRecruitment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,10 +52,21 @@
 		9484C7D225B4657C00169E8A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		9484C7D525B465E600169E8A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9484C7D925B4AF6400169E8A /* alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "alert+Extension.swift"; sourceTree = "<group>"; };
+		9484C7E025B5808400169E8A /* iOSRecruitmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSRecruitmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9484C7E425B5808400169E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9484C7F925B581F000169E8A /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		9484C8D925B64D6700169E8A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		09D0056F2293F1BB00477097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9484C7DD25B5808400169E8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				09D005742293F1BB00477097 /* iOSRecruitment */,
+				9484C7E125B5808400169E8A /* iOSRecruitmentTests */,
 				09D005732293F1BB00477097 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				09D005722293F1BB00477097 /* iOSRecruitment.app */,
+				9484C7E025B5808400169E8A /* iOSRecruitmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +122,16 @@
 				9484C7D925B4AF6400169E8A /* alert+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9484C7E125B5808400169E8A /* iOSRecruitmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				9484C7E425B5808400169E8A /* Info.plist */,
+				9484C7F925B581F000169E8A /* MockCoreDataManager.swift */,
+				9484C8D925B64D6700169E8A /* MockCoreDataStack.swift */,
+			);
+			path = iOSRecruitmentTests;
 			sourceTree = "<group>";
 		};
 		94AC6F2F25B30BF100F86C86 /* Model */ = {
@@ -159,18 +194,41 @@
 			productReference = 09D005722293F1BB00477097 /* iOSRecruitment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9484C7DF25B5808400169E8A /* iOSRecruitmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9484C7E725B5808400169E8A /* Build configuration list for PBXNativeTarget "iOSRecruitmentTests" */;
+			buildPhases = (
+				9484C7DC25B5808400169E8A /* Sources */,
+				9484C7DD25B5808400169E8A /* Frameworks */,
+				9484C7DE25B5808400169E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9484C7E625B5808400169E8A /* PBXTargetDependency */,
+			);
+			name = iOSRecruitmentTests;
+			productName = iOSRecruitmentTests;
+			productReference = 9484C7E025B5808400169E8A /* iOSRecruitmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		09D0056A2293F1BB00477097 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = cheerz;
 				TargetAttributes = {
 					09D005712293F1BB00477097 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					9484C7DF25B5808400169E8A = {
+						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
+						TestTargetID = 09D005712293F1BB00477097;
 					};
 				};
 			};
@@ -188,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				09D005712293F1BB00477097 /* iOSRecruitment */,
+				9484C7DF25B5808400169E8A /* iOSRecruitmentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +260,13 @@
 				09D005802293F1BF00477097 /* LaunchScreen.storyboard in Resources */,
 				09D0057D2293F1BF00477097 /* Assets.xcassets in Resources */,
 				09D0057B2293F1BB00477097 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9484C7DE25B5808400169E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +290,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9484C7DC25B5808400169E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9484C7FA25B581F000169E8A /* MockCoreDataManager.swift in Sources */,
+				9484C8DA25B64D6700169E8A /* MockCoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9484C7E625B5808400169E8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09D005712293F1BB00477097 /* iOSRecruitment */;
+			targetProxy = 9484C7E525B5808400169E8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		09D005792293F1BB00477097 /* Main.storyboard */ = {
@@ -400,6 +483,51 @@
 			};
 			name = Release;
 		};
+		9484C7E825B5808400169E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MSLYVU6K6;
+				INFOPLIST_FILE = iOSRecruitmentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-rodolphe.iOSRecruitmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSRecruitment.app/iOSRecruitment";
+			};
+			name = Debug;
+		};
+		9484C7E925B5808400169E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MSLYVU6K6;
+				INFOPLIST_FILE = iOSRecruitmentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-rodolphe.iOSRecruitmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSRecruitment.app/iOSRecruitment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +545,15 @@
 			buildConfigurations = (
 				09D005852293F1BF00477097 /* Debug */,
 				09D005862293F1BF00477097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9484C7E725B5808400169E8A /* Build configuration list for PBXNativeTarget "iOSRecruitmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9484C7E825B5808400169E8A /* Debug */,
+				9484C7E925B5808400169E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
