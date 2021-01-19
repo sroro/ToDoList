@@ -70,6 +70,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="archivesTableView" destination="LIw-Lz-PN8" id="Toy-eg-80c"/>
+                        <segue destination="OwA-bF-NxR" kind="show" identifier="segueArchiveToTask" id="dBz-5E-2tH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBH-An-yCR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -224,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9q-DS-UGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="176"/>
+            <point key="canvasLocation" x="1761" y="622"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DUw-k7-g6j">

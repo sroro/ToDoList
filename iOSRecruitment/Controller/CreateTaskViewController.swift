@@ -10,6 +10,8 @@ import UIKit
 
 class CreateTaskViewController: UIViewController {
     
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var titleTaskTextField: UITextField!
     @IBOutlet weak var taskTextView: UITextView!
     
@@ -25,12 +27,16 @@ class CreateTaskViewController: UIViewController {
         taskTextView.text = taskDetails?.text
     }
     
+    // MARK: - IBAction
+    
     @IBAction func addTaskButton(_ sender: Any) {
+        
         guard let textTitle = titleTaskTextField.text else { return }
         guard let textTask = taskTextView.text else { return }
+        
         coreDataManager?.createTask(title: textTitle, text: textTask)
         _ = navigationController?.popViewController(animated: true)
         
     }
-    
 }
+

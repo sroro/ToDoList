@@ -21,7 +21,7 @@ class TasksViewController: UIViewController {
     }
     ///delete all tasks
     @IBAction func deleteTasksBarButton(_ sender: UIBarButtonItem) {
-        alertTwoChoiceDeleteTask(title: "Delete All Task?", message: "sure sure? ?") { (success) in
+        alertTwoChoiceDeleteTask(title: "Delete All Task?", message: "sure sure ? ?") { (success) in
             guard success == true else {return}
             self.coreDataManager?.deleteAllTasks()
             self.taskTableView.reloadData()
@@ -72,8 +72,7 @@ extension TasksViewController:  UITableViewDataSource {
         guard let textSelected = taskSelected.text else { return }
         if segue.identifier == "segueToTask" {
             let vcDestination = segue.destination as? CreateTaskViewController
-            let taskDetails = TaskDetails(title: titleSelected, text: textSelected
-            )
+            let taskDetails = TaskDetails(title: titleSelected, text: textSelected)
             vcDestination?.taskDetails = taskDetails
             
         }

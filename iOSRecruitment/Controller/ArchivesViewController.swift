@@ -9,11 +9,12 @@
 import UIKit
 class ArchivesViewController: UIViewController {
     
-    @IBOutlet weak var archivesTableView: UITableView!
+    @IBOutlet weak var archivesTableView: UITableView! { didSet{ archivesTableView.tableFooterView = UIView()} }
     private var coreDataManager: CoreDataManager?
+    var archiveTaskSelected : Task?
     
     @IBAction func deleteArchivesButton(_ sender: UIBarButtonItem) {
-        alertTwoChoiceDeleteTask(title: "Delete All Task?", message: "sure sure? ?") { (success) in
+        alertTwoChoiceDeleteTask(title: "Delete All Task?", message: "sure sure ? ?") { (success) in
             guard success == true else {return}
             self.coreDataManager?.deleteAllTasksArchived()
             self.archivesTableView.reloadData()
@@ -45,6 +46,23 @@ extension ArchivesViewController: UITableViewDataSource {
         guard let cell = archivesTableView.dequeueReusableCell(withIdentifier: "CellTaskViewCell", for: indexPath) as? CellTaskViewCell else { return UITableViewCell() }
         cell.task = coreDataManager?.tasksArchived[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        archiveTaskSelected = coreDataManager?.tasksArchived[indexPath.row]
+        performSegue(withIdentifier: "segueArchiveToTask", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let archiveTaskSelected = archiveTaskSelected else { return }
+        guard let archiveTitleSelected = archiveTaskSelected.title else { return }
+        guard let archiveTextSelected = archiveTaskSelected.text else { return }
+        if segue.identifier == "segueArchiveToTask" {
+            let vcDestination = segue.destination as? CreateTaskViewController
+            let taskDetails = TaskDetails(title: archiveTitleSelected, text: archiveTextSelected)
+            vcDestination?.taskDetails = taskDetails
+            
+        }
     }
 }
 

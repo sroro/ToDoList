@@ -25,7 +25,7 @@ class CellTaskViewCell: UITableViewCell {
             titleTaskLabel.text = task.title
             taskLabel.text = task.text
             if task.isArchived {
-                archiveTask.setImage(#imageLiteral(resourceName: "pouceFullFill"), for: .normal)
+                isDoneTask.setImage(#imageLiteral(resourceName: "pouceFullFill"), for: .normal)
             }
         }
     }
@@ -34,17 +34,13 @@ class CellTaskViewCell: UITableViewCell {
     
     @IBOutlet weak var titleTaskLabel: UILabel!
     @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var archiveTask: UIButton!
-    @IBOutlet weak var isDoneButton: UIButton!
+    @IBOutlet weak var isDoneTask: UIButton!
+ 
     
     //MARK: -IBActions
     
-    @IBAction func isDoneTappedButton(_ sender: Any) {
-        
-    }
     
-    
-    @IBAction func archiveTaskButton(_ sender: UIButton) {
+    @IBAction func isDoneTappedButton(_ sender: UIButton) {
         guard let task = task else { return }
         cellInteractionDelegate?.didValideTask(task: task)
     }

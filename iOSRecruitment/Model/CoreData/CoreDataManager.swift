@@ -54,6 +54,7 @@ final class CoreDataManager {
         coreDataStack.saveContext()
     }
 
+    //MARK: - Functions Delete
     func deleteAllTasks() {
         tasks.forEach { managedObjectContext.delete($0) }
         coreDataStack.saveContext()

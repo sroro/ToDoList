@@ -26,4 +26,10 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func alertAddText() {
+        let alert = UIAlertController(title: "Warning", message: "Add some text", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

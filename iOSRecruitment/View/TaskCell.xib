@@ -23,24 +23,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4H-Uy-fK9">
-                        <rect key="frame" x="20" y="71.5" width="350" height="20.5"/>
+                        <rect key="frame" x="20" y="71.5" width="339" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="350" id="dsY-F7-kV0"/>
+                            <constraint firstAttribute="width" constant="339" id="dsY-F7-kV0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esb-15-iVw">
-                        <rect key="frame" x="379" y="61.5" width="20" height="19"/>
-                        <color key="tintColor" red="0.078431372549019607" green="0.84705882352941175" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <state key="normal" backgroundImage="checkmark.circle" catalog="system"/>
-                        <connections>
-                            <action selector="isDoneTappedButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="OSX-cI-CSH"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uY-Bb-lCe">
-                        <rect key="frame" x="369" y="16" width="30" height="30"/>
+                        <rect key="frame" x="369" y="36" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="62P-Lg-hF2"/>
                             <constraint firstAttribute="width" constant="30" id="ANh-zH-V2i"/>
@@ -48,7 +40,7 @@
                         <state key="normal" image="pouce"/>
                         <state key="selected" image="pouceFullFill"/>
                         <connections>
-                            <action selector="archiveTaskButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="7rr-G9-URY"/>
+                            <action selector="isDoneTappedButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="7rr-G9-URY"/>
                         </connections>
                     </button>
                 </subviews>
@@ -58,17 +50,14 @@
                     <constraint firstItem="4uY-Bb-lCe" firstAttribute="leading" secondItem="Inq-87-oxQ" secondAttribute="trailing" constant="10" id="FU4-SU-V4i"/>
                     <constraint firstAttribute="bottom" secondItem="a4H-Uy-fK9" secondAttribute="bottom" constant="10" id="JIx-xx-3qs"/>
                     <constraint firstItem="Inq-87-oxQ" firstAttribute="leading" secondItem="ucH-CD-u5J" secondAttribute="leading" constant="20" id="bRL-0j-ccf"/>
-                    <constraint firstItem="4uY-Bb-lCe" firstAttribute="top" secondItem="ucH-CD-u5J" secondAttribute="topMargin" constant="5" id="cWT-49-S4s"/>
+                    <constraint firstItem="4uY-Bb-lCe" firstAttribute="top" secondItem="ucH-CD-u5J" secondAttribute="topMargin" constant="25" id="cWT-49-S4s"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4uY-Bb-lCe" secondAttribute="trailing" constant="10" id="cbP-5g-J0a"/>
                     <constraint firstItem="a4H-Uy-fK9" firstAttribute="top" secondItem="Inq-87-oxQ" secondAttribute="bottom" constant="25" id="eAA-8w-Yj1"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="esb-15-iVw" secondAttribute="trailing" constant="10" id="fUu-UH-gc0"/>
                     <constraint firstItem="Inq-87-oxQ" firstAttribute="top" secondItem="ucH-CD-u5J" secondAttribute="topMargin" constant="17" id="jzT-d8-02A"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="esb-15-iVw" secondAttribute="bottom" constant="10" id="vt9-7e-hIP"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="archiveTask" destination="4uY-Bb-lCe" id="dhg-2C-G2j"/>
-                <outlet property="isDoneButton" destination="esb-15-iVw" id="1HO-hz-ywp"/>
+                <outlet property="isDoneTask" destination="4uY-Bb-lCe" id="dhg-2C-G2j"/>
                 <outlet property="taskLabel" destination="a4H-Uy-fK9" id="vXc-B7-qq1"/>
                 <outlet property="titleTaskLabel" destination="Inq-87-oxQ" id="9k3-1q-PaR"/>
             </connections>
@@ -76,7 +65,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="pouce" width="900" height="1001"/>
         <image name="pouceFullFill" width="900" height="1001"/>
     </resources>
