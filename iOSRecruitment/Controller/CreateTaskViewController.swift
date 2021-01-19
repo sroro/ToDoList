@@ -9,17 +9,20 @@
 import UIKit
 
 class CreateTaskViewController: UIViewController {
+    
     @IBOutlet weak var titleTaskTextField: UITextField!
     @IBOutlet weak var taskTextView: UITextView!
-   
+    
     private var coreDataManager: CoreDataManager?
-    var taskDetails : Test?
+    var taskDetails : TaskDetails?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let coredataStack = appdelegate.coreDataStack
         coreDataManager = CoreDataManager(coreDataStack: coredataStack)
+        titleTaskTextField.text = taskDetails?.title
+        taskTextView.text = taskDetails?.text
     }
     
     @IBAction func addTaskButton(_ sender: Any) {

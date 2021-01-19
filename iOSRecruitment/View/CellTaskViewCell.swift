@@ -8,31 +8,54 @@
 
 import UIKit
 
+protocol CellInteraction {
+    func didValideTask(task:Task)
+}
 class CellTaskViewCell: UITableViewCell {
+    
+    //MARK: - propertie
+    
+    var taskDetails : TaskDetails?
+    var taskIsArchived : Bool?
+    var cellInteractionDelegate : CellInteraction?
+    
+    var task: Task? {
+        didSet{
+            guard let task = task else { return}
+            titleTaskLabel.text = task.title
+            taskLabel.text = task.text
+            if task.isArchived {
+                archiveTask.setImage(#imageLiteral(resourceName: "pouceFullFill"), for: .normal)
+            }
+        }
+    }
+
+    //MARK:- IBoutlet
     
     @IBOutlet weak var titleTaskLabel: UILabel!
     @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var deleteTaskButton: UIButton!
-    @IBOutlet weak var validateTask: UIButton!
+    @IBOutlet weak var archiveTask: UIButton!
+    @IBOutlet weak var isDoneButton: UIButton!
     
+    //MARK: -IBActions
     
-    @IBAction func validateTaskButton(_ sender: Any) {
-        validateTask.isSelected.toggle()
+    @IBAction func isDoneTappedButton(_ sender: Any) {
         
     }
+    
+    
+    @IBAction func archiveTaskButton(_ sender: UIButton) {
+        guard let task = task else { return }
+        cellInteractionDelegate?.didValideTask(task: task)
+    }
+    
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
         //set the values for top,left,bottom,right margins
-        let margins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        let margins = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         contentView.frame = contentView.frame.inset(by: margins)
     }
     
-    
-    var task: Task? {
-        didSet{
-            titleTaskLabel.text = task?.title
-            taskLabel.text = task?.text
-        }
-    }
 }

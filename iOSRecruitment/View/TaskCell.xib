@@ -32,9 +32,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esb-15-iVw">
-                        <rect key="frame" x="379.5" y="60" width="19.5" height="20.5"/>
+                        <rect key="frame" x="379" y="61.5" width="20" height="19"/>
                         <color key="tintColor" red="0.078431372549019607" green="0.84705882352941175" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <state key="normal" backgroundImage="trash.fill" catalog="system"/>
+                        <state key="normal" backgroundImage="checkmark.circle" catalog="system"/>
+                        <connections>
+                            <action selector="isDoneTappedButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="OSX-cI-CSH"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uY-Bb-lCe">
                         <rect key="frame" x="369" y="16" width="30" height="30"/>
@@ -45,7 +48,7 @@
                         <state key="normal" image="pouce"/>
                         <state key="selected" image="pouceFullFill"/>
                         <connections>
-                            <action selector="validateTaskButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="7rr-G9-URY"/>
+                            <action selector="archiveTaskButton:" destination="R6f-y7-t7r" eventType="touchUpInside" id="7rr-G9-URY"/>
                         </connections>
                     </button>
                 </subviews>
@@ -64,17 +67,17 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="deleteTaskButton" destination="esb-15-iVw" id="Tcn-T3-QGG"/>
+                <outlet property="archiveTask" destination="4uY-Bb-lCe" id="dhg-2C-G2j"/>
+                <outlet property="isDoneButton" destination="esb-15-iVw" id="1HO-hz-ywp"/>
                 <outlet property="taskLabel" destination="a4H-Uy-fK9" id="vXc-B7-qq1"/>
                 <outlet property="titleTaskLabel" destination="Inq-87-oxQ" id="9k3-1q-PaR"/>
-                <outlet property="validateTask" destination="4uY-Bb-lCe" id="dhg-2C-G2j"/>
             </connections>
             <point key="canvasLocation" x="-272.8125" y="-255.63380281690141"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="pouce" width="900" height="1001"/>
         <image name="pouceFullFill" width="900" height="1001"/>
-        <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>

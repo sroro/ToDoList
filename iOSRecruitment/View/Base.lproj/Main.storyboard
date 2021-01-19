@@ -63,8 +63,14 @@
                     <navigationItem key="navigationItem" title="Archives" id="D9h-Ql-WnQ">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="fjN-Ok-q58">
                             <color key="tintColor" red="0.98431372549999996" green="0.80392156859999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteArchivesButton:" destination="P2b-VD-xX9" id="dKS-9L-IzP"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="archivesTableView" destination="LIw-Lz-PN8" id="Toy-eg-80c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBH-An-yCR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,6 +130,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addTaskButton:" destination="d5w-EC-5GH" eventType="touchUpInside" id="9z4-w5-Pse"/>
+                                    <segue destination="OwA-bF-NxR" kind="show" id="7VP-gm-vJG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,6 +247,9 @@
             <point key="canvasLocation" x="-1674" y="668"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7VP-gm-vJG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox.fill" catalog="system" width="128" height="106"/>
         <image name="scribble" catalog="system" width="128" height="118"/>

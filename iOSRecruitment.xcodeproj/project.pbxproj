@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				9484C7E425B5808400169E8A /* Info.plist */,
-				9484C7F925B581F000169E8A /* MockCoreDataManager.swift */,
 				9484C8D925B64D6700169E8A /* MockCoreDataStack.swift */,
+				9484C7F925B581F000169E8A /* MockCoreDataManager.swift */,
 			);
 			path = iOSRecruitmentTests;
 			sourceTree = "<group>";
@@ -461,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheerz.iOSRecruitment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheerz.iOSRecruitment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

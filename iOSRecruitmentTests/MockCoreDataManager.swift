@@ -44,5 +44,23 @@ final class CoreDataManagerTests: XCTestCase {
         coreDataManager.deleteAllTasks()
         XCTAssertTrue(coreDataManager.tasks.isEmpty)
     }
+    
+    func testDeleteMethod_WhenAllIsDeleted_ThenShouldBeCorrectlyDeleted() {
+        coreDataManager.createTask(title: "Course", text: "lait")
+        coreDataManager.deleteAllTasks()
+        XCTAssertTrue(coreDataManager.tasks.isEmpty)
+    }
+    
+    func testDeleteOneTask_WhenOneisDeleted_ThenShouldBeCorrectlyDeleted() {
+        coreDataManager.createTask(title: "Course", text: "lait")
+        coreDataManager.deleteTask(task: coreDataManager.tasks[0])
+        XCTAssertTrue(coreDataManager.tasks.isEmpty)
+    }
+    
+    func testDeletetTasksArchived_WhenAllIsDeleted_ThenShouldBeCorrectlyDeleted() {
+        coreDataManager.createTask(title: "Course", text: "lait")
+        coreDataManager.deleteAllTasksArchived()
+        XCTAssertTrue(coreDataManager.tasksArchived.isEmpty)
+    }
 }
 
